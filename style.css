@@ -1,0 +1,131 @@
+:root {
+  --black: #191919;
+  --white: #ffffff;
+  --gray-300: #99a1af;
+
+  --green-400: #00c950;
+  --green-500: #009d3f;
+
+  --red-500: #fb2c36;
+  --red-700: #bc000a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--black);
+
+  min-height: 80vh;
+}
+
+main {
+  padding: 1rem;
+}
+
+main h2 {
+  color: var(--white);
+  font-size: 3rem;
+}
+
+main .todo-input {
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+main .todo-input input {
+  width: 17.5rem;
+  height: 2.5rem;
+  padding: 0.625rem 1rem;
+
+  border: none;
+  background-color: var(--white);
+  border-radius: 0.25rem;
+
+  color: var(--gray-300);
+  font-size: 0.875rem;
+
+  outline: none;
+}
+
+main .todo-input button {
+  width: 4.5rem;
+  height: 2.5rem;
+  padding: 0.625rem 1rem;
+
+  border: none;
+  background-color: var(--green-400);
+  border-radius: 0.25rem;
+
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+main .todo-input button:hover {
+  background-color: var(--green-500);
+  transition: background-color 0.2s ease-out;
+}
+
+main .todo-list {
+  margin-top: 2rem;
+}
+
+main .todo-list .todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  color: var(--white);
+}
+
+main .todo-list .todo-item time {
+  margin-left: 1.5rem;
+}
+
+main .todo-list .todo-item .delete-todo-button {
+  width: 4.5rem;
+  height: 2.5rem;
+  padding: 0.625rem 1rem;
+
+  border: none;
+  background-color: var(--red-500);
+  border-radius: 0.25rem;
+
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+main .todo-list .todo-item .delete-todo-button:hover {
+  background-color: var(--red-700);
+  transition: background-color 0.2s ease-out;
+}
+
+@media (max-width: 700px) {
+  main .todo-input {
+    flex-direction: column;
+  }
+
+  main .todo-input button {
+    width: 100%;
+  }
+}
