@@ -12,8 +12,8 @@ function saveTodoList(todoList) {
 }
 
 function formatDate(dateString) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US");
+  const [year, month, day] = dateString.split("-");
+  return `${month}/${day}/${year}`;
 }
 
 function renderTodoList() {
