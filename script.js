@@ -8,7 +8,7 @@ function getTodoList() {
 }
 
 function saveTodoList(todoList) {
-  localStorage.setItem("todo-list", JSON.stringify(todoList));
+  return localStorage.setItem("todo-list", JSON.stringify(todoList));
 }
 
 function formatDate(dateString) {
@@ -20,20 +20,33 @@ function renderTodoList() {
   const todoList = getTodoList();
   let todoListHTML = "";
 
+  if (todoList.length === 0) {
+    todoListHTML = `
+      <div class="empty-state">
+        <img src="/assets/icons/notepad.svg" />
+        <p>Your to-do list is empty. Create your first task.</p>        
+      </div>
+    `;
+
+    containerElement.innerHTML = todoListHTML;
+
+    return;
+  }
+
   todoList.forEach((todoObject, index) => {
     const { name, dueDate } = todoObject;
 
     const html = `
     <div class="todo-item">
-        <span>${name}</span>
-        <time>${formatDate(dueDate)}</time>
-        
-        <button 
-          class="delete-todo-button" 
-          data-index="${index}"
-        >
-          Delete
-        </button>
+      <span>${name}</span>
+      <time>${formatDate(dueDate)}</time>
+      
+      <button 
+        class="delete-todo-button" 
+        data-index="${index}"
+      >
+        Delete
+      </button>
     </div>
     `;
 

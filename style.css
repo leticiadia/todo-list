@@ -1,7 +1,9 @@
 :root {
   --black: #191919;
   --white: #ffffff;
+
   --gray-300: #99a1af;
+  --gray-500: #737373;
 
   --green-400: #00c950;
   --green-500: #009d3f;
@@ -120,6 +122,24 @@ main .todo-list .todo-item .delete-todo-button:hover {
   transition: background-color 0.2s ease-out;
 }
 
+main .todo-list .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+main .todo-list .empty-state img {
+  height: 4rem;
+}
+
+main .todo-list .empty-state p {
+  color: var(--gray-500);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 @media (max-width: 700px) {
   main .todo-input {
     flex-direction: column;
@@ -127,5 +147,13 @@ main .todo-list .todo-item .delete-todo-button:hover {
 
   main .todo-input button {
     width: 100%;
+  }
+
+  main .todo-list .empty-state img {
+    height: 3rem;
+  }
+
+  main .todo-list .empty-state p {
+    font-size: 0.75rem;
   }
 }
