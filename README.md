@@ -6,7 +6,7 @@ A simple and well-structured to-do list application, developed with Vanilla Java
 
 ### 🖼️ Preview
 
-![preview](/images/todo-list.png)
+![preview](/assets/images/todo-list.png)
 
 ### 🧠 Motivation
 
