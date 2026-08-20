@@ -23,7 +23,7 @@ function renderTodoList() {
   if (todoList.length === 0) {
     todoListHTML = `
       <div class="empty-state">
-        <img src="/assets/icons/notepad.svg" />
+        <img src="assets/icons/notepad.svg" />
         <p>Your to-do list is empty. Create your first task.</p>        
       </div>
     `;
